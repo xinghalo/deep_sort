@@ -187,18 +187,22 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Re-ID feature extractor")
     parser.add_argument(
         "--model",
-        default="resources/networks/mars-small128.pb",
+        default="/Users/xingoo/PycharmProjects/deep_sort/resources/networks/mars-small128.pb",
         help="Path to freezed inference graph protobuf.")
     parser.add_argument(
-        "--mot_dir", help="Path to MOTChallenge directory (train or test)",
-        required=True)
+        "--mot_dir",
+        help="Path to MOTChallenge directory (train or test)",
+        default="/Users/xingoo/PycharmProjects/deep_sort/MOT16/train")
     parser.add_argument(
-        "--detection_dir", help="Path to custom detections. Defaults to "
+        "--detection_dir",
+        help="Path to custom detections. Defaults to "
         "standard MOT detections Directory structure should be the default "
-        "MOTChallenge structure: [sequence]/det/det.txt", default=None)
+        "MOTChallenge structure: [sequence]/det/det.txt",
+        default=None)
     parser.add_argument(
-        "--output_dir", help="Output directory. Will be created if it does not"
-        " exist.", default="detections")
+        "--output_dir",
+        help="Output directory. Will be created if it does not exist.",
+        default="/Users/xingoo/PycharmProjects/deep_sort/resources/detections/MOT16_train")
     return parser.parse_args()
 
 
